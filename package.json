@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/abbeyjanicek/music-collection-project#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "pg": "^7.4.3"
   }
 }

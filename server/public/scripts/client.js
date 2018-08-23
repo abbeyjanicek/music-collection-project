@@ -1,6 +1,6 @@
 console.log('js');
 
-let musicCollectionApp = angular.module('MusicCollectionApp', ['ngRoute']);
+let musicCollectionApp = angular.module('musicCollectionApp', ['ngRoute']);
 
 musicCollectionApp.config(function ($routeProvider) {
     $routeProvider.when('/home', {
