@@ -1,0 +1,24 @@
+{
+  "name": "music-collection-project",
+  "version": "1.0.0",
+  "description": "Trello Board: https://trello.com/b/syo6Yufh/music-collection-weekend-project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abbeyjanicek/music-collection-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abbeyjanicek/music-collection-project/issues"
+  },
+  "homepage": "https://github.com/abbeyjanicek/music-collection-project#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
