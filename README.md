@@ -38,7 +38,8 @@ VALUES ('Challengers', 'The New Pornographers', 08-07-2007, 'indie rock');
 
 **genre**
 CREATE TABLE "genre" (
-"type" varchar(20) not null
+	"id" serial primary key,
+	"type" varchar(20) not null
 );
 
 INSERT INTO "genre" ("type")
