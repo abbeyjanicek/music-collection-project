@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,10 +16,15 @@
     <script src="scripts/controllers/music.controller.js"></script>
     <script src="scripts/controllers/genre.controller.js"></script>
 </head>
-<body>
-<div class="header">
-    <h1>Top Selling Albums of All-Time</h1>
-</div>
-    
+
+<body ng-app="musicCollectionApp">
+    <div class="header">
+        <div ng-controller="HomeController as hc" ng-controller="MusicController as mc" ng-controller="GenreController as gc">
+            <h1>Top Selling Albums of All-Time</h1>
+            is angularJS working? {{2 === 2}}
+        </div>
+    </div>
+
 </body>
+
 </html>
