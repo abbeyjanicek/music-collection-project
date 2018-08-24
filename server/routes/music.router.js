@@ -35,5 +35,16 @@ router.post('/', function (req, res) {
     });
 });//end POST to db
 
+router.get('/', function (req, res) {
+    console.log('in GET route');
+    const query = 'SELECT * FROM "music";';
+    pool.query(query).then((results) => {
+        console.log(results);
+        res.send(results.rows);
+    }).catch((error) => {
+        console.log('error making GET', error);
+        res.sendStatus(500);
+    });
+})//end GET from db
 
 module.exports = router;

@@ -10,10 +10,25 @@
             <option value="pop">pop</option>
             <option value="rock">rock</option>
             <option value="electronic">electronic</option>
-            <option value="indie">indie</option>
-            
+            <option value="indie">indie</option>     
         </select>
     <input class="inputfield" type="text" ng-model="mc.albumToAdd.image_url" placeholder="enter image url here">
     <button class="button" type="submit">Add Album</button>
     <!--<md-button class="md-raised md-warn" type="submit">Submit</md-button>-->
 </form>
+
+<table>
+    <tbody>
+        <th>Album Title</th>
+        <th>Artist</th>
+        <th>Genre</th>
+        <th>Image</th>
+        <tr ng-repeat="album in mc.album.list">
+            <td>{{album.title}}</td>
+            <td>{{album.artist}}</td>
+            <td>{{album.genre}}</td>
+            <td><img ng-src="images/{{album.image-url}}"></td>
+            
+        </tr>
+    </tbody>
+</table>
