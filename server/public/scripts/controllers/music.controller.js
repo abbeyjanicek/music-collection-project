@@ -12,7 +12,7 @@ musicCollectionApp.controller('MusicController', ['$http', function ($http) {
             data: albumToAdd
         }).then(function (response) {
             console.log('MusicController - addAlbum - response', response.data);
-            self.albumToAdd = { title: '', artist: '', genre: ''} //release_date: '', image_url: ''
+            self.albumToAdd = { title: '', artist: '', genre: '', image_url: ''} //release_date: '', 
         }).catch(function (error) {
             console.log('MusicController - addAlbum - error', error);
         });

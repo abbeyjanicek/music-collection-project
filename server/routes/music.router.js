@@ -25,8 +25,8 @@ pool.on('error', (error) => {
 router.post('/', function (req, res) {
     const albumToAdd = req.body;
     console.log('in POST route', albumToAdd);
-    const query = 'INSERT INTO "music" ("title", "artist", "genre") VALUES ($1, $2, $3);'; // "release_date", "image_url"
-    pool.query(query, [albumToAdd.title, albumToAdd.artist, albumToAdd.genre]).then(() => {  //albumToAdd.release_date, albumToAdd.image_url
+    const query = 'INSERT INTO "music" ("title", "artist", "genre", "image-url") VALUES ($1, $2, $3, $4);'; // "release_date", 
+    pool.query(query, [albumToAdd.title, albumToAdd.artist, albumToAdd.genre, albumToAdd.image_url]).then(() => {  //albumToAdd.release_date, 
         console.log('POST - added to db');
         res.sendStatus(201);
     }).catch((error) => {

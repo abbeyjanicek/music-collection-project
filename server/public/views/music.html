@@ -7,12 +7,13 @@
     <!--<md-datepicker ng-model="ctrl.myDate" md-current-view="year" md-placeholder="enter release date"></md-datepicker>-->
     <select ng-model="mc.albumToAdd.genre">
             <option value="">---Please select---</option>
-            <option value="1">{{albumToAdd.genre}}</option>
-            <option value="2">{{albumToAdd.genre}}</option>
-            <option value="3">{{albumToAdd.genre}}</option>
-            <option value="4">{{albumToAdd.genre}}</option>
+            <option value="pop">pop</option>
+            <option value="rock">rock</option>
+            <option value="electronic">electronic</option>
+            <option value="indie">indie</option>
+            
         </select>
-    <!--<input class="inputfield" type="text" ng-model="mc.albumToAdd.image_url" placeholder="enter image url here">-->
+    <input class="inputfield" type="text" ng-model="mc.albumToAdd.image_url" placeholder="enter image url here">
     <button class="button" type="submit">Add Album</button>
     <!--<md-button class="md-raised md-warn" type="submit">Submit</md-button>-->
 </form>
