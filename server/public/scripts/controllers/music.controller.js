@@ -2,7 +2,7 @@ musicCollectionApp.controller('MusicController', ['$http', function ($http) {
     console.log('MusicController GO!');
 
     const self = this;
-    self.album = { list: [{ title: 'Bad', artist: 'Michael Jackson', genre: 'pop', image_url: 'images/bad_mj.jpg' }] } //release_date: '1987-08-07', 
+    self.album = { list: [{ title: 'Bad', artist: 'Michael Jackson', release_date: '', genre: 'pop', image_url: 'images/bad_mj.jpg' }] }
 
     self.addAlbum = function(albumToAdd) {
         console.log('in addAlbum');
@@ -12,7 +12,7 @@ musicCollectionApp.controller('MusicController', ['$http', function ($http) {
             data: albumToAdd
         }).then(function (response) {
             console.log('MusicController - addAlbum - response', response.data);
-            self.albumToAdd = { title: '', artist: '', genre: '', image_url: ''} //release_date: '', 
+            self.albumToAdd = { title: '', artist: '', release_date: '', genre: '', image_url: ''} 
             getAlbums();
         }).catch(function (error) {
             console.log('MusicController - addAlbum - error', error);
@@ -35,4 +35,15 @@ musicCollectionApp.controller('MusicController', ['$http', function ($http) {
 
     getAlbums();
 
-}])//end MusicController
+    self.deleteAlbum = function (album) {
+        $http({
+            method: 'DELETE',
+            url: '/music/' + album.id
+        }).then(function (response) {
+            console.log('MusicController - deleteAlbum - response');
+            getAlbums();
+        }).catch(function (error) {
+            console.log('MusicController - deleteAlbum - error', error.statusText);
+        });
+    }//end deleteAlbum
+}]);//end MusicController
