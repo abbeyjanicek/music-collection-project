@@ -1,11 +1,18 @@
 <h2>Music Collection</h2>
 <h5>Add Album:</h5>
 
-<form>
-    <input class="inputfield" type="text" placeholder="enter title of album here">
-    <input class="inputfield" type="text" placeholder="enter name of artist here">  
+<form ng-submit="mc.addAlbum(mc.albumToAdd)">
+    <input class="inputfield" type="text" ng-model="mc.albumToAdd.title" placeholder="enter title of album here">
+    <input class="inputfield" type="text" ng-model="mc.albumToAdd.artist" placeholder="enter name of artist here">  
     <md-datepicker ng-model="ctrl.myDate" md-current-view="year" md-placeholder="enter release date"></md-datepicker>
-    <input class="inputfield" type="text" placeholder="ehter genre of album here">
-    <input class="inputfield" type="text" placeholder="enter image url here">
-    <md-button class="md-raised md-warn" type="submit">Submit</md-button>
+    <select ng-model="mc.albumToAdd.genre">
+            <!-- not selected / blank option -->
+            <option value="">---Please select---</option>
+            <!-- repeat over ships -->
+            <!--<option ng-repeat="ship in vm.ships" value="{{ship.id}}">{{ship.name}}</option>>-->
+            <option value="genre">Genre</option>
+        </select>
+    <input class="inputfield" type="text" ng-model="mc.albumToAdd.image_url" placeholder="enter image url here">
+    <button class="button" type="submit">Add Album</button>
+    <!--<md-button class="md-raised md-warn" type="submit">Submit</md-button>-->
 </form>

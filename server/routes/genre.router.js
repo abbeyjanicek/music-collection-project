@@ -8,7 +8,7 @@ const Pool = pg.Pool;
 const config = {
     database: 'music-collection',
     host: 'localhost',
-    posrt: 5432,
+    port: 5432,
     max: 10,
     idleTimeoutMillis: 10000
 }
