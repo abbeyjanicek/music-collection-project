@@ -4,15 +4,15 @@
 <form ng-submit="mc.addAlbum(mc.albumToAdd)">
     <input class="inputfield" type="text" ng-model="mc.albumToAdd.title" placeholder="enter title of album here">
     <input class="inputfield" type="text" ng-model="mc.albumToAdd.artist" placeholder="enter name of artist here">  
-    <md-datepicker ng-model="ctrl.myDate" md-current-view="year" md-placeholder="enter release date"></md-datepicker>
+    <!--<md-datepicker ng-model="ctrl.myDate" md-current-view="year" md-placeholder="enter release date"></md-datepicker>-->
     <select ng-model="mc.albumToAdd.genre">
-            <!-- not selected / blank option -->
             <option value="">---Please select---</option>
-            <!-- repeat over ships -->
-            <!--<option ng-repeat="ship in vm.ships" value="{{ship.id}}">{{ship.name}}</option>>-->
-            <option value="genre">Genre</option>
+            <option value="1">{{albumToAdd.genre}}</option>
+            <option value="2">{{albumToAdd.genre}}</option>
+            <option value="3">{{albumToAdd.genre}}</option>
+            <option value="4">{{albumToAdd.genre}}</option>
         </select>
-    <input class="inputfield" type="text" ng-model="mc.albumToAdd.image_url" placeholder="enter image url here">
+    <!--<input class="inputfield" type="text" ng-model="mc.albumToAdd.image_url" placeholder="enter image url here">-->
     <button class="button" type="submit">Add Album</button>
     <!--<md-button class="md-raised md-warn" type="submit">Submit</md-button>-->
 </form>

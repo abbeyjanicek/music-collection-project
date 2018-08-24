@@ -2,10 +2,10 @@ console.log('js');
 
 let musicCollectionApp = angular.module('musicCollectionApp', ['ngRoute']);
 
-angular.module('datepickerBasicUsage', ['ngMaterial', 'ngMessages']).controller('AppCtrl', function() {
-    this.myDate = new Date();
-    this.isOpen = false;
-  });
+// angular.module('datepickerBasicUsage', ['ngMaterial', 'ngMessages']).controller('AppCtrl', function() {
+//     this.myDate = new Date();
+//     this.isOpen = false;
+//   });
 
 musicCollectionApp.config(function ($routeProvider) {
     $routeProvider.when('/home', {
