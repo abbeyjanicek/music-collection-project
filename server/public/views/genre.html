@@ -5,3 +5,17 @@
     <input class="inputfield" type="text" ng-model="gc.genreToAdd.type" placeholder="enter new music genre here">
     <button class="button" type="submit">Add Genre</button>
 </form>
+
+
+<table>
+    <tbody>
+        <th>Genre Type</th>
+        <th>Total Albums</th>
+        <th>Actions</th>
+        <tr ng-repeat="genre in gc.genre.list">
+            <td>{{genre.type}}</td>
+            <td> number </td>
+            <td><button ng-click="gc.deleteGenre(genre)">Delete Entry</button></td>
+        </tr>
+    </tbody>
+</table>

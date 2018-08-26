@@ -36,6 +36,29 @@ router.post('/', function (req, res) {
     });
 });//end POST to db
 
+router.get('/', function (req, res) {
+    console.log('in GET route');
+    const query = 'SELECT * FROM "genre";';
+    pool.query(query).then((results) => {
+        console.log(results);
+        res.send(results.rows);
+    }).catch((error) => {
+        console.log('error making GET', error);
+        res.sendStatus(500);
+    });
+})//end GET from db
 
+router.delete('/:id', function (req, res) {
+    console.log('in DELETE route');
+    const idOfGenreToDelete = req.params.id;
+    const query = 'DELETE FROM "genre" WHERE "id" = $1;';
+    pool.query(query, [idOfGenreToDelete]).then((results) => {
+        console.log('received DELETE req');
+        res.send(results.rows);
+    }).catch((error) => {
+        console.log('error in DELETE req', error);
+        res.sendStatus(500);
+    });
+})//end DELETE route
 
 module.exports = router;
