@@ -27,7 +27,7 @@ router.post('/', function (req, res) {
     console.log('in POST route', albumToAdd);
     const query = 'INSERT INTO "music" ("title", "artist", "release_date", "genre", "image_url") VALUES ($1, $2, $3, $4, $5);'; 
     pool.query(query, [albumToAdd.title, albumToAdd.artist, albumToAdd.release_date, albumToAdd.genre, albumToAdd.image_url]).then(() => { 
-        console.log('POST - added to db');
+        console.log('POST - added album to db');
         res.sendStatus(201);
     }).catch((error) => {
         console.log('error in POST', error);
