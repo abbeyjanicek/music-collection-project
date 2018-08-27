@@ -25,7 +25,7 @@
         <tr ng-repeat="album in mc.album">
             <td>{{album.title}}</td>
             <td>{{album.artist}}</td>
-            <td>{{album.release_date}}</td>
+            <td>{{album.release_date | date}}</td>
             <td>{{album.genre_type}}</td>
             <td><img ng-src="{{album.image_url}}"></td>
             <td><button ng-click="mc.deleteAlbum(album)">Delete Album</button></td>
