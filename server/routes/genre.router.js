@@ -38,7 +38,10 @@ router.post('/', function (req, res) {
 
 router.get('/', function (req, res) {
     console.log('in GET route');
-    const query = 'SELECT * FROM "genre";';
+    const query = `SELECT "g".*, count("m") as "current_music"
+                    FROM "genre" as "g" LEFT JOIN "music" as "m"
+                    ON "g"."id" = "m"."genre_id"
+                    GROUP BY "g"."id";`;
     pool.query(query).then((results) => {
         console.log(results);
         res.send(results.rows);

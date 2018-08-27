@@ -4,16 +4,16 @@
 <form ng-submit="mc.addAlbum(mc.albumToAdd)">
     <input class="inputfield" type="text" ng-model="mc.albumToAdd.title" placeholder="enter title of album here">
     <input class="inputfield" type="text" ng-model="mc.albumToAdd.artist" placeholder="enter name of artist here">
-    <input class="inputfield" type="text" ng-model="mc.albumToAdd.date" placeholder="enter release date (YYYY-MM-DD) here">
+    <input class="inputfield" type="text" ng-model="mc.albumToAdd.release_date" placeholder="enter release date (YYYY-MM-DD) here">
     <!--<md-datepicker ng-model="ctrl.myDate" md-current-view="year" md-placeholder="enter release date"></md-datepicker>-->
-    <select ng-model="mc.albumToAdd.genre">
+    <select ng-model="mc.albumToAdd.genre_id">
         <option value="">---Please select---</option>
-        <option value="pop">pop</option>
+        <option ng-repeat="genre in mc.genre" value="{{genre.id}}">{{genre.type}}</option>
+        <!-- <option value="pop">pop</option>
         <option value="rock">rock</option>
         <option value="electronic">electronic</option>
-        <option value="indie">indie</option>
+        <option value="indie">indie</option> -->
     </select>
-    <!-- <option ng-repeat="ship in vm.ships" value="{{ship.id}}">{{ship.name}}</option> -->
     <input class="inputfield" type="text" ng-model="mc.albumToAdd.image_url" placeholder="enter image url here">
     <button class="button" type="submit">Add Album</button>
     <!--<md-button class="md-raised md-warn" type="submit">Submit</md-button>-->
@@ -23,13 +23,15 @@
     <tbody>
         <th>Album Title</th>
         <th>Artist</th>
+        <th>Release Date</th>
         <th>Genre</th>
         <th>Image</th>
         <th>Actions</th>
-        <tr ng-repeat="album in mc.album.list">
+        <tr ng-repeat="album in mc.album">
             <td>{{album.title}}</td>
             <td>{{album.artist}}</td>
-            <td>{{album.genre}}</td>
+            <td>{{album.release_date}}</td>
+            <td>{{album.genre_type}}</td>
             <td><img ng-src="{{album.image_url}}"></td>
             <td><button ng-click="mc.deleteAlbum(album)">Delete Album</button></td>
         </tr>

@@ -14,7 +14,7 @@
         <th>Actions</th>
         <tr ng-repeat="genre in gc.genre.list">
             <td>{{genre.type}}</td>
-            <td> number </td>
+            <td>{{genre.current_music}}</td>
             <td><button ng-click="gc.deleteGenre(genre)">Delete Entry</button></td>
         </tr>
     </tbody>

@@ -25,8 +25,8 @@ pool.on('error', (error) => {
 router.post('/', function (req, res) {
     const albumToAdd = req.body;
     console.log('in POST route', albumToAdd);
-    const query = 'INSERT INTO "music" ("title", "artist", "release_date", "genre", "image_url") VALUES ($1, $2, $3, $4, $5);'; 
-    pool.query(query, [albumToAdd.title, albumToAdd.artist, albumToAdd.release_date, albumToAdd.genre, albumToAdd.image_url]).then(() => { 
+    const query = 'INSERT INTO "music" ("title", "artist", "release_date", "genre_id", "image_url") VALUES ($1, $2, $3, $4, $5);'; 
+    pool.query(query, [albumToAdd.title, albumToAdd.artist, albumToAdd.release_date, albumToAdd.genre_id, albumToAdd.image_url]).then(() => { 
         console.log('POST - added album to db');
         res.sendStatus(201);
     }).catch((error) => {
@@ -35,10 +35,18 @@ router.post('/', function (req, res) {
     });
 });//end POST to db
 
+//music GET route
 router.get('/', function (req, res) {
     console.log('in GET route');
-    const query = 'SELECT * FROM "music";';
-    pool.query(query).then((results) => {
+    const query = `SELECT "music"."id" as "id",
+                    "music"."title",
+                    "music"."artist",
+                    "music"."release_date",
+                    "genre"."type" as "genre_type",
+                    "music"."image_url"
+                    FROM "music" LEFT JOIN "genre"
+                    ON "music"."genre_id" = "genre"."id";`;
+    pool.query(query).then(results => {
         console.log(results);
         res.send(results.rows);
     }).catch((error) => {
