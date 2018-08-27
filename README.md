@@ -23,6 +23,7 @@ Trello Board: https://trello.com/b/syo6Yufh/music-collection-weekend-project
 ### Database
 
 Tables: 
+
 **music**
 
 CREATE TABLE "music" (
