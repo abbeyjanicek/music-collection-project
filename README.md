@@ -12,7 +12,7 @@ Trello Board: https://trello.com/b/syo6Yufh/music-collection-weekend-project
 
 ### Wireframes
 
-#### Add Movie View
+#### Add Music View
 
 ![Add Entry Page](music-view.png)
 
