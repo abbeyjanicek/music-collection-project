@@ -43,9 +43,7 @@ CREATE TABLE "music" (
 	);
 
 
-INSERT INTO "music" ("title", "artist", "date", "genre")
-
-VALUES ('Challengers', 'The New Pornographers', 08-07-2007, 'indie rock');
+INSERT INTO "music" ("title", "artist", "date", "genre") VALUES ('Challengers', 'The New Pornographers', 08-07-2007, 'indie rock');
 
 **genre**
 
@@ -58,9 +56,7 @@ CREATE TABLE "genre" (
 );
 
 
-INSERT INTO "genre" ("type")
-
-VALUES ('indie rock');
+INSERT INTO "genre" ("type") VALUES ('indie rock');
 
 ## Stretch Goals
 
