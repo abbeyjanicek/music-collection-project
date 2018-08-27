@@ -38,16 +38,32 @@ musicCollectionApp.controller('GenreController', ['$http', '$mdDialog', function
 
     getGenreData();
 
+self.showAlert = function(ev) {
+    $mdDialog.show(
+        $mdDialog.alert()
+        .clickOutsideToClose(true)
+        .title('Wait!')
+        .textContent('You can not delete a genre that has albums attached to it.')
+        .ariaLabel('Delete Alert')
+        .ok('Got it!')
+        .targetEvent(ev)
+    );
+};
+
     self.deleteGenre = function (genre) {
-        $http({
-            method: 'DELETE',
-            url: '/genre/' + genre.id
-        }).then(function (response) {
-            console.log('GenreController - deleteGenre - response');
-            getGenreData();
-        }).catch(function (error) {
-            console.log('GenreController - deleteGenre - error', error.statusText); 
-        });
+        if (genre.current_music > 0) {
+            self.showAlert();
+        } else {
+            $http({
+                method: 'DELETE',
+                url: '/genre/' + genre.id
+            }).then(function (response) {
+                console.log('GenreController - deleteGenre - response');
+                getGenreData();
+            }).catch(function (error) {
+                console.log('GenreController - deleteGenre - error', error.statusText);
+            });
+        }
     }//end deleteGenre
 
 
