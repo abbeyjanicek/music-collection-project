@@ -14,11 +14,11 @@ Trello Board: https://trello.com/b/syo6Yufh/music-collection-weekend-project
 
 #### Add Movie View
 
-![Add Entry Page](page-one.png)
+![Add Entry Page](music-view.png)
 
 #### Manage Genres View
 
-![Add Entry Page](page-two.png)
+![Add Entry Page](genre-view.png)
 
 ### Database
 
