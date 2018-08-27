@@ -1,4 +1,4 @@
-musicCollectionApp.controller('GenreController', ['$http', function ($http) {
+musicCollectionApp.controller('GenreController', ['$http', '$mdDialog', function ($http, $mdDialog) {
     console.log('GenreController GO!');
 
     const self = this;

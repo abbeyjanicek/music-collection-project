@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="styles/style.css" />
     <!--source in angular, angular routes and client.js-->
     <link href="vendors/Angular-JS/angular-material.css" rel="stylesheet">
+    <script src="vendors/moment.js"></script>
     <script src="vendors/Angular-JS/angular.min.js"></script>
     <script src="vendors/Angular-JS/angular-route.js"></script>
     <script src="vendors/Angular-JS/angular-aria.min.js"></script>
@@ -19,22 +20,17 @@
     
     <script src="scripts/client.js"></script>
     <!--source in controllers for each view-->
-    <script src="scripts/controllers/home.controller.js"></script>
     <script src="scripts/controllers/music.controller.js"></script>
     <script src="scripts/controllers/genre.controller.js"></script>
 </head>
 
 <body ng-app="musicCollectionApp">
     <div class="header">
-        <div ng-controller="HomeController as hc" ng-controller="MusicController as mc" ng-controller="GenreController as gc">
-            <h1>Top Selling Albums of All-Time</h1>
-            is angularJS working? {{2 === 2}}
+        <div ng-controller="MusicController as mc" ng-controller="GenreController as gc">
+            <h1>The Music Database</h1>
         </div>
         <div>
                 <nav class="navbar navbar-expand-sm bg-secondary justify-content-center">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#!/home">Home</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#!/music">Music</a>
                         </li>

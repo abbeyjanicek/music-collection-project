@@ -1,4 +1,4 @@
-musicCollectionApp.controller('MusicController', ['$http', function ($http) {
+musicCollectionApp.controller('MusicController', ['$http', '$mdDialog', function ($http, $mdDialog) {
     console.log('MusicController GO!');
 
     const self = this;
