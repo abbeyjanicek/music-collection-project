@@ -5,10 +5,10 @@ Trello Board: https://trello.com/b/syo6Yufh/music-collection-weekend-project
 ## Features
 
 - Add genres
-- Add movies by name, absolute image URL, release date, genere and run time
-- Remove movies
+- Add music by album name, artist, absolute image URL, release date, genre
+- Remove albums
 - Delete existing entries
-- Show total number of movies next to each genre
+- Show total number of albums next to each genre
 
 ### Wireframes
 
