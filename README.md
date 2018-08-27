@@ -25,12 +25,19 @@ Trello Board: https://trello.com/b/syo6Yufh/music-collection-weekend-project
 Tables: 
 **music**
 CREATE TABLE "music" (
+
 	"id" serial primary key,
+
 	"title" varchar(80) not null,
+
 	"artist" varchar(80) not null,
+
 	"release_date" date,
+
 	"genre_id" integer not null,
+
 	"image_url" varchar(20000)
+	
 	);
 
 INSERT INTO "music" ("title", "artist", "date", "genre")
@@ -53,7 +60,3 @@ VALUES ('indie rock');
 - Vote up or down a movie
 - Ability to favorite a movie and display favorites on a separate route
 - Feel free to deviate from this list and add features of your own
-
-## Variations
-
-The following variations are available for this project. Instead of **movies**, you could implement the project with **books** 
