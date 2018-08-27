@@ -6,7 +6,7 @@ musicCollectionApp.controller('MusicController', ['$http', '$mdDialog', function
 
     self.album = [];
 
-    const albumToAdd = { title: '', artist: '', release_date: '', genre_id: '', image_url: ''}
+    self.albumToAdd = { title: '', artist: '', release_date: '', genre_id: '', image_url: ''}
 
     self.addAlbum = function(albumToAdd) {
         console.log('in addAlbum');
@@ -17,6 +17,7 @@ musicCollectionApp.controller('MusicController', ['$http', '$mdDialog', function
         }).then(function (response) {
             console.log('MusicController - addAlbum - response', response.data); 
             self.getAlbums();
+            albumToAdd = {};
         }).catch(function (error) {
             console.log('MusicController - addAlbum - error', error);
         });
