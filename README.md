@@ -28,9 +28,9 @@ CREATE TABLE "music" (
 	"id" serial primary key,
 	"title" varchar(80) not null,
 	"artist" varchar(80) not null,
-	"date" integer,
-	"genre" varchar(20) not null,
-	"image-url" varchar(120)
+	"release_date" date,
+	"genre_id" integer not null,
+	"image_url" varchar(20000)
 	);
 
 INSERT INTO "music" ("title", "artist", "date", "genre")
