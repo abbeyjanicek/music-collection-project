@@ -24,6 +24,7 @@ Trello Board: https://trello.com/b/syo6Yufh/music-collection-weekend-project
 
 Tables: 
 **music**
+
 CREATE TABLE "music" (
 
 	"id" serial primary key,
@@ -37,19 +38,27 @@ CREATE TABLE "music" (
 	"genre_id" integer not null,
 
 	"image_url" varchar(20000)
-	
+
 	);
 
+
 INSERT INTO "music" ("title", "artist", "date", "genre")
+
 VALUES ('Challengers', 'The New Pornographers', 08-07-2007, 'indie rock');
 
 **genre**
+
 CREATE TABLE "genre" (
+
 	"id" serial primary key,
+
 	"type" varchar(20) not null
+
 );
 
+
 INSERT INTO "genre" ("type")
+
 VALUES ('indie rock');
 
 ## Stretch Goals
