@@ -4,13 +4,15 @@ let musicCollectionApp = angular.module('musicCollectionApp', ['ngRoute', 'ngMat
 
 
 musicCollectionApp.config(function ($routeProvider) {
-    $routeProvider.when('/music', {
+    $routeProvider.when('/', {
+        redirectTo: '/music'
+    }).when('/music', {
         templateUrl: 'views/music.html',
         controller: 'MusicController as mc'
     }).when('/genre', {
         templateUrl: 'views/genre.html',
         controller: 'GenreController as gc'
-    }).otherwise( {
+    }).otherwise({
         templateUrl: 'views/404.html'
     })
 })
